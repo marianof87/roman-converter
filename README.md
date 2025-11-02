@@ -134,6 +134,18 @@ App.test.tsx y App.server.test.tsx
 -Tests de servidor (App.server.test.tsx) cubren llamadas a API y manejo de respuestas.
 -V8 coverage considera que toda la lógica JS está cubierta.
 
+TEST:coverage
+
+% Coverage report from v8
+---------------|---------|----------|---------|---------|-------------------
+File           | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+---------------|---------|----------|---------|---------|-------------------
+All files      |   96.55 |    91.89 |   88.88 |      98 | 
+ App.css       |       0 |        0 |       0 |       0 | 
+ App.tsx       |   96.29 |    89.47 |   85.71 |   96.15 | 50
+ converters.ts |   96.77 |    94.44 |     100 |     100 | 2
+---------------|---------|----------|---------|---------|-------------------
+
 | Archivo                                | Coverage real | Comentario                                                 |
 | -------------------------------------- | ------------- | ---------------------------------------------------------- |
 | `App.tsx`                              | 96–97 %       | Solo líneas JSX con ternarios o short-circuits no marcadas |
