@@ -8,5 +8,5 @@
 "forceConsistentCasingInFileNames": true,
 "skipLibCheck": true
 },
-"include": ["src", "client/coverage/index.ts", "client/src/converters.test.ts"]
+"include": ["src", "client/coverage/index.ts", "client/src/converters.test.ts", "../vitest.config.ts"]
 }
