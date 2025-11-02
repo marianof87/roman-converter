@@ -78,8 +78,8 @@ export default function App() {
           </button>
         </div>
 
-        {error && <div className="error">{error}</div>}
-        {result !== null && <div className="result">Resultado: {String(result)}</div>}
+        {error !== null ? <div className="error">{error}</div> : null}
+        {result !== null ? <div className="result">Resultado: {String(result)}</div> : null}
       </div>
 
       <div className="api-base">API base: {apiBase}</div>
