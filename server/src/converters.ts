@@ -17,8 +17,10 @@ export function intToRoman(num: number): string {
 
 export function romanToInt(raw: string): number {
   if (!raw || typeof raw !== 'string') throw new Error('Cadena inválida');
-  
+
   const s = raw.toUpperCase().trim();
+
+  // Validación de caracteres romanos
   if (!/^[IVXLCDM]+$/.test(s)) throw new Error('Caracteres inválidos en romano');
 
   const map: Record<string, number> = { I:1, V:5, X:10, L:50, C:100, D:500, M:1000 };
@@ -35,8 +37,12 @@ export function romanToInt(raw: string): number {
     }
   }
 
-  // Validación canónica: si el número convertido a romano no coincide con el original
-  if (intToRoman(total) !== s) throw new Error('Número romano no canónico');
-  
+  // Validación canónica: convertir de vuelta y comparar
+  const canonical = intToRoman(total);
+  if (canonical !== s) throw new Error('Número romano no canónico');
+
+  // Chequeo de rango después de validar la forma canónica
+  if (total <= 0 || total >= 4000) throw new Error('Número fuera de rango (1-3999)');
+
   return total;
 }

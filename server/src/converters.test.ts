@@ -1,9 +1,7 @@
-// server/src/converters.test.ts
 import { describe, it, expect } from 'vitest'
 import { intToRoman, romanToInt } from './converters'
 
 describe('intToRoman', () => {
-
   it('convierte correctamente números válidos', () => {
     expect(intToRoman(1)).toBe('I')
     expect(intToRoman(4)).toBe('IV')
@@ -27,7 +25,6 @@ describe('intToRoman', () => {
 })
 
 describe('romanToInt', () => {
-
   it('convierte números romanos válidos a enteros', () => {
     expect(romanToInt('I')).toBe(1)
     expect(romanToInt('IV')).toBe(4)
@@ -39,9 +36,15 @@ describe('romanToInt', () => {
     expect(romanToInt('MMMCMXCIX')).toBe(3999)
   })
 
-  it('ignora espacios y mayúsculas', () => {
+  it('ignora espacios y mayúsculas/minúsculas mezcladas', () => {
     expect(romanToInt('  ix  ')).toBe(9)
     expect(romanToInt('mMmCmXcIx')).toBe(3999)
+  })
+
+  it('convierte combinaciones complejas correctamente', () => {
+    expect(romanToInt('XLII')).toBe(42)
+    expect(romanToInt('XCIX')).toBe(99)
+    expect(romanToInt('CDXLIV')).toBe(444)
   })
 
   it('lanza error si la cadena es inválida o vacía', () => {
@@ -58,6 +61,8 @@ describe('romanToInt', () => {
   it('lanza error si el número romano no está en forma canónica', () => {
     expect(() => romanToInt('IIII')).toThrow('Número romano no canónico')
     expect(() => romanToInt('VV')).toThrow('Número romano no canónico')
-    expect(() => romanToInt('IC')).toThrow('Número romano no canónico')
+    expect(() => romanToInt('IL')).toThrow('Número romano no canónico')
+    expect(() => romanToInt('XD')).toThrow('Número romano no canónico')
+    expect(() => romanToInt('MMMM')).toThrow('Número fuera de rango (1-3999)')
   })
 })
