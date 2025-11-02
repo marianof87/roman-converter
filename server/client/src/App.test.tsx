@@ -40,6 +40,17 @@ describe('App component', () => {
 
     expect(await screen.findByText(/Número fuera de rango/i)).toBeInTheDocument()
   })
+  it('converts roman numeral to integer locally', async () => {
+  render(<App />)
+  const input = screen.getByPlaceholderText(/Ingrese número/i)
+  const button = screen.getByText(/Convertir local/i)
+
+  fireEvent.change(input, { target: { value: 'MCMXCIX' } })
+  fireEvent.click(button)
+
+  expect(await screen.findByText(/Resultado: 1999/i)).toBeInTheDocument()
+})
+
 
   it('handles empty input (treated as out of range)', async () => {
     render(<App />)

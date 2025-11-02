@@ -9,5 +9,5 @@
     "skipLibCheck": true,
     "types": ["vitest", "node"]   // 👈 ESTA ES LA LÍNEA NUEVA
   },
-  "include": ["src", "../src/converters.test.ts"]
+  "include": ["src", "src/converters.test.ts"]
 }
