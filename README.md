@@ -241,6 +241,28 @@ TEST:ui
      ✓ lanza error si contiene caracteres no romanos 2ms
      ✓ lanza error si el número romano no está en forma canónica 2ms
 
+     TESTS ASSERTIONS
+
+     ✓ src/converters.test.ts (9 tests) 35ms
+   ✓ intToRoman (3)
+     ✓ convierte correctamente números válidos 5ms
+     ✓ lanza error si el número no es entero 3ms
+     ✓ lanza error si el número está fuera del rango 1-3999 3ms
+   ✓ romanToInt (6)
+     ✓ convierte números romanos válidos a enteros 2ms
+     ✓ ignora espacios y mayúsculas/minúsculas mezcladas 1ms
+     ✓ convierte combinaciones complejas correctamente 1ms
+     ✓ lanza error si la cadena es inválida o vacía 2ms
+     ✓ lanza error si contiene caracteres no romanos 4ms
+     ✓ lanza error si el número romano no está en forma canónica 8ms
+
+ Test Files  1 passed (1)
+      Tests  9 passed (9)
+   Start at  15:44:45
+   Duration  1.01s (transform 155ms, setup 0ms, collect 227ms, tests 35ms, environment 1ms, prepare 53ms)
+
+ PASS 
+
  Test Files  1 passed (1)
       Tests  8 passed (8)
    Start at  12:53:46
