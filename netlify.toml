@@ -1,7 +1,7 @@
 [build]
-  base = "server/client"               
+  base = "server/client"
   command = "npm run build"
-  publish = "server/client/dist"       # ajusta si usas "client/dist" o "dist"
+  publish = "dist"
 
 [[redirects]]
   from = "/*"
